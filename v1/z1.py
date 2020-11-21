@@ -25,14 +25,24 @@ def primes(list):
 		if is_prime(x):
 			primes.append(x)
 			
-	return primes			
+	return primes
+
+def hex_list(list):
+	hexlist = []
+	
+	for x in list:
+		hexlist.append(hex(x))
+		
+	return hexlist			
 
 def main():
 	list = generate(30)
 	print(list)
 	list = primes(list)
-	print (list)
+	print(list)
+	list = hex_list(list)
+	print(list)
 	
 
-if __name__=="__main__":
+if __name__ == "__main__":
 	main()
