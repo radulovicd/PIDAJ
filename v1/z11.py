@@ -22,10 +22,7 @@ def hex_dictionary(list):
 	dictionary = {}
 	for x in list:
 		for s in x[2:]:
-			if s in dictionary:
-				dictionary[s] += 1
-			else:
-				dictionary[s] = 1
+			dictionary[s] = dictionary[s] + 1 if s in dictionary else 1
 	
 	return dictionary	
 
