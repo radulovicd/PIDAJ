@@ -33,7 +33,18 @@ def hex_list(list):
 	for x in list:
 		hexlist.append(hex(x))
 		
-	return hexlist			
+	return hexlist
+
+def hex_dictionary(list):
+	dictionary = {}
+	for x in list:
+		for s in x[2:]:
+			if s in dictionary:
+				dictionary[s] += 1
+			else:
+				dictionary[s] = 1
+	
+	return dictionary	
 
 def main():
 	list = generate(30)
@@ -42,7 +53,8 @@ def main():
 	print(list)
 	list = hex_list(list)
 	print(list)
-	
+	dict = hex_dictionary(list)
+	print(dict)
 
 if __name__ == "__main__":
 	main()
