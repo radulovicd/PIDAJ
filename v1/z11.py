@@ -1,7 +1,7 @@
 import math
 
 def generate(n):
-	return [i for i in range(1, n + 1)]
+	return (i for i in range(1, n + 1))
 
 def is_prime(x):
 	for i in range(0, int(math.sqrt(x)) + 1):
@@ -13,10 +13,10 @@ def is_prime(x):
 	return True
 
 def primes(list):
-	return [x for x in list if x > 2 and is_prime(x)]
+	return (x for x in list if x > 2 and is_prime(x))
 
 def hex_list(list):
-	return [hex(x) for x in list]
+	return (hex(x) for x in list)
 
 def hex_dictionary(list):
 	dictionary = {}
@@ -28,13 +28,10 @@ def hex_dictionary(list):
 
 def main():
 	list = generate(30)
-	print(list)
-	list = primes(list)
-	print(list)
-	list = hex_list(list)
-	print(list)
-	dict = hex_dictionary(list)
-	print(dict)
+		
+	list_primes = primes(list)
+	list_hex = hex_list(list_primes)
+	dict = hex_dictionary(list_hex)
 
 if __name__ == "__main__":
 	main()
