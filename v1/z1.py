@@ -1,4 +1,5 @@
 import math
+import tracemalloc
 
 def generate(n):
 	list = []
@@ -47,14 +48,14 @@ def hex_dictionary(list):
 	return dictionary	
 
 def main():
-	list = generate(30)
-	print(list)
+	list = generate(1000000)
 	list = primes(list)
-	print(list)
+	tracemalloc.start()
 	list = hex_list(list)
-	print(list)
+	current, peak = tracemalloc.get_traced_memory()
+	print(f"Current memory usage is {current / 10**6}MB; Peak was {peak / 10**6}MB")
+	tracemalloc.stop()
 	dict = hex_dictionary(list)
-	print(dict)
 
 if __name__ == "__main__":
 	main()
