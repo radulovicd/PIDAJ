@@ -36,7 +36,7 @@ def main():
 	current, peak = tracemalloc.get_traced_memory()
 	print(f"Current memory usage is {current / 10**6}MB; Peak was {peak / 10**6}MB")
 	tracemalloc.stop()
-	dict = hex_dictionary(list_hex)
+#	dict = hex_dictionary(list_hex)
 
 if __name__ == "__main__":
 	main()
